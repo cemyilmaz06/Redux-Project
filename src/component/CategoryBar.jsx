@@ -20,7 +20,7 @@ const CategoryBar = ({filteredProducts}) => {
      
         {categories.map((category,index) => (
            
-             <Button variant="contained" key={index} onClick={()=>dispatch(filteredProducts(category)) }>{category}</Button>
+             <Button variant="contained" key={index}  onClick={()=>dispatch(filteredProducts(category)) }>{category}</Button>
      ))}
       </Container>
    
