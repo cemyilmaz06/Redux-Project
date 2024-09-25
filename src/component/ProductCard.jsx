@@ -6,6 +6,8 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import { IconButton } from "@mui/material";
 import { addToBasket } from "../redux/action/basketAction";
 import CategoryBar from "./CategoryBar";
+import { filteredProducts } from '../redux/action/productAction';
+import { Card, Container } from "react-bootstrap";
 const ProductCard = () => {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products.products);
@@ -24,9 +26,10 @@ setProductData(selectedProducts);
   }, [dispatch]);
 
   return (
-    <div>
-      <h2>Products</h2>
-      <div style={{ display: "flex", flexWrap: "wrap" }}>
+    <Container className="d-flex align-item-center justify-content-center">
+    <Card  className="rounded-2 m-auto card mb-5" role="button">
+      <h2 className="text-center">Products</h2>
+      <div style={{ display: "flex" ,flexWrap:"wrap" }}>
         {products.map((product) => (
           <div
             key={product.id}
@@ -34,26 +37,32 @@ setProductData(selectedProducts);
               border: "1px solid #ccc",
               margin: "10px",
               padding: "10px",
+              width:"400px",
+              height:"450px",
+              marginLeft:"20px"
             }}
           >
             <img
               src={product.image}
               alt={product.title}
-              style={{ width: "100px" }}
+              style={{ width: "200px",height:"250px",marginLeft:"80px"}}
             />
-            <div >
+            <div className="title" >
        
-              <h3>{product.title}</h3>
+              <h3 style={{fontSize:"20px",width:"200px"}}>{product.title}</h3>
               <p>{product.price} $</p>
             </div>
-            <IconButton color="primary" aria-label="add to shopping cart" onClick={()=>dispatch(addToBasket())}>
+            <div className="d-flex justify-content-between ">{product.category}
+            <IconButton color="black" aria-label="add to shopping cart" onClick={()=>dispatch(addToBasket())}>
         <AddShoppingCartIcon />
       </IconButton>
+      </div>
           </div>
         ))}
       </div>
-      <CategoryBar filteredProducts={filteredProducts}/>
-    </div>
+     
+    </Card>
+    </Container>
   );
 };
 

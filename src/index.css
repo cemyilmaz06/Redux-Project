@@ -1,3 +1,27 @@
 body {
   margin: 0;
 }
+.navbar{
+  display: flex;
+}
+.icon{
+margin-right: 20px;
+width: 50px;
+height: 40px;
+
+}
+.text{
+  color: black;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+.sepet{
+  color: black;
+  
+
+}
+.title{
+ display: flex;
+ justify-content: space-between;
+ height: 16vh;
+}
