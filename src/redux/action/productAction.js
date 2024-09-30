@@ -4,7 +4,8 @@ import axios from 'axios';
 // Ürün verilerini çekme aksiyonu
 export const fetchProducts = () => async (dispatch) => {
   try {
-    const response = await axios.get('https://fakestoreapi.com/products');
+    const response = await axios.get(
+      'https://fakestoreapi.com/products');
     dispatch({ type: 'FETCH_PRODUCTS_SUCCESS', payload: response.data });
    
   } catch (error) {
