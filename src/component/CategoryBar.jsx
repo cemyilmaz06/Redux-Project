@@ -18,9 +18,9 @@ const CategoryBar = ({filteredProducts,}) => {
     <Container  >
       <h1 className='baslik mb-4' align='center' >Categories</h1>
      
-        {categories.map((category,index) => (
+        {["all", ...categories].map((category,index) => (
           
-             <button style={{color:"black",border:"none",marginLeft:"150px",display:"inline",justifyContent:"center",alignItems:"center",marginBottom:"60px", padding:"10px", borderRadius:"10px"}} key={index}  
+             <button style={{color:"black",border:"none",marginLeft:"100px",display:"inline",justifyContent:"center",alignItems:"center",marginBottom:"60px", padding:"10px", borderRadius:"10px"}} key={index}  
            >{category}</button>
      ))}
       </Container>

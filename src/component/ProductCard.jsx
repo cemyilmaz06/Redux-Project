@@ -24,7 +24,7 @@ const ProductCard = () => {
   
 
   return (
-    <Container className="d-flex align-item-center justify-content-center">
+    <Container >
       <Card className="rounded-2 m-auto card mb-5" role="button">
         <h2 className="text-center">Ürünler</h2>
         <div style={{ display: "flex", flexWrap: "wrap" }}>
